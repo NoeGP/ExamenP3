@@ -10,9 +10,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar conexión
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    echo "<html><h1>Conexión fallida: " . $conn->connect_error . "</h1></html>";
+} else {
+    echo "<html><h1>Conexión exitosa</h1></html>";
 }
-
 $sql = "SELECT * FROM Lugares";
 $result = $conn->query($sql);
 
