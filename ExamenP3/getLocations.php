@@ -27,9 +27,33 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
+
+
+
 $conn->close();
 
 echo json_encode($locations);
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Prueba de PHP</title>
+</head>
+
+<body>
+    <div id="una capa">
+        <h1>Hola mundo!</h1>
+        <p>Este es un ejemplo del uso de HTML para crear un documento web que nuestro navegador es capaz de interpretar.
+        </p>
+    </div>
+    <h1>Datos de la base de datos</h1>
+    <div id="result"></div>
+</body>
+
+</html>
