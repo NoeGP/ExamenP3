@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Consultas</title>
     <style>
-        li {
+        .location-item {
             margin-bottom: 10px;
+        }
+        .location-item::before {
+            content: "- "; /* Aquí puedes cambiar a otro símbolo si lo prefieres */
         }
     </style>
     <script>
@@ -14,18 +17,23 @@
             fetch('ExamenP3/getLocations.php')
                 .then(response => response.json())
                 .then(data => {
-                    let output = '<ul>';
+                    let output = '';
                     data.forEach(location => {
                         output += `
                             <li>
                                 <strong>Biblioteca:</strong> ${location.Biblioteca}<br>
+                            </li>
+                            <li>
                                 <strong>Bloque A:</strong> ${location.BloqueA}<br>
+                            </li>
+                            <li>
                                 <strong>Bloque B:</strong> ${location.BloqueB}<br>
+                            </li>
+                            <li>
                                 <strong>Laboratorios:</strong> ${location.Laboratorio}
                             </li>
                         `;
                     });
-                    output += '</ul>';
                     document.getElementById('results').innerHTML = output;
                 })
                 .catch(error => console.error('Error:', error));
