@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 $servername = "byofggcnz2y0q6v0sheh-mysql.services.clever-cloud.com";
 $username = "uvlenx1awvdur1wk";
 $password = "Y7259IuGNdVd78KvCgLc";
